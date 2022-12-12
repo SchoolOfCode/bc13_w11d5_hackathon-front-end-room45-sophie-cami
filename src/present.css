@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+
+:root {
+    --box:#CC231E;
+    --dots: #ffffff;
+    --ribbon: rgba(235, 199, 0, 0.8);
+    --green: #34A65F;
+    --text: #ffffff;
+    --shadow: rgba(0,0,0,0.2);
+    --christmas-font: 'Merienda';
+    --box-width: 400px;
+    --box-height: 250px;
+    --lid-height: 70px;
+  }
+
+
+.present {
+  width: var(--box-width);
+  margin: 0 auto;
+  padding:  1%;;
+}
+
+.old-present {
+    width: var(--box-width);
+    margin: 0 auto;
+    padding:  1%;
+  }
+
+.old-present {
+  --box:rgba(220, 122, 122);
+  --ribbon: rgba(212, 201, 136, 0.8);
+  --text: rgb(231, 229, 229);
+}
+
+.box, .lid {
+  background:
+    -webkit-radial-gradient(var(--dots) 15%, transparent 15.1%),
+    -webkit-radial-gradient(var(--dots) 15%, transparent 15.1%),
+  var(--box);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  position: relative;
+  margin: 0 auto;
+}
+.box {
+  width: var(--box-width);
+  height: var(--box-height);
+}
+.lid {
+  width: var(--box-width);
+  height: var(--lid-height);
+  box-shadow: 1px 2px 3px var(--shadow);
+  z-index: 1;
+  background-color: var(--box);
+  /* transitions */
+  top: 0;
+  left: 0;
+  transition: 
+    top ease-out 0.5s,
+    left ease-out 0.5s,
+    transform ease-out 0.5s;
+}
+
+/* ribbon positioning */
+.box span, .lid span {
+  position: absolute;
+  display: block;
+  background:var(--ribbon);
+  box-shadow: 1px 2px 3px var(--shadow);
+}
+
+/* horizontal ribbon sizing */
+.box span:first-child {
+  width: 100%;
+  height: 60px;
+  top: 94px;
+}
+
+/* vertical ribbon sizing */
+.box span:last-child, .lid span {
+    display: flex;
+  width: 60px;
+  height: 100%;
+  left: 170px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* lid sizing */
+.lid span {
+  left: 172px;
+}
+
+/*activity text css */
+.activity {
+  font-size: 30px;
+  color:var(--text);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  position: relative;
+  height: 0;
+  top: 10px;
+  transition: all ease-out 0.7s;
+}
+
+/* unvisited link */
+a:link {
+    color: var(--text);
+  }
+
+/* visited link */
+a:visited {
+    color: var(--text);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: var(--ribbon);
+  }
+  
+  /* selected link */
+  a:active {
+    color: var(--ribbon);
+  }
+
+/* box day label text*/
+#day {
+    font-size: 160px;
+    color: var(--text);
+    font-family: var(--christmas-font);
+}
+
+/* hover effects */
+.present:hover .lid {
+  top: -100px;
+  transform: rotateZ(10deg);
+  left: 10px;
+}
+
+.present:hover .activity {
+  top: -80px;
+}
+
+.old-present:hover .lid {
+    top: -100px;
+    transform: rotateZ(10deg);
+    left: 10px;
+}
+
+.old-present:hover .activity {
+    top: -80px;
+}
+
+  
