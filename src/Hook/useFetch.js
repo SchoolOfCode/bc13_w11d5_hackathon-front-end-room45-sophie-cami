@@ -20,7 +20,7 @@ function useFetch(fetchUrl) {
     console.log(data);
     return <p>Error!</p>;
   }
-  console.log(data);
+  console.log("If you cannot see any activities it's because you are checking them out before the date or before December. Come back then to get some festive inspo! :)");
   return [data];
 }
 export default useFetch;
